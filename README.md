@@ -1,37 +1,23 @@
 # jwt-login
 
 #### 介绍
-Jwt+Spring Cloud Gateway+nacos实现分布式下免登录
 
-#### 软件架构
-软件架构说明
+Jwt+Gateway+Nacos+Redis实现分布式下免登录
 
+#### 整体设计
+
+[Jwt+Gateway+nacos+redis实现免登录](/https://www.runaccepted.com/2019/11/14/Jwt-Spring%E5%AE%9E%E7%8E%B03%E5%A4%A9%E5%85%8D%E7%99%BB%E5%BD%95/)
 
 #### 安装教程
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
+1.  安装redis https://redis.io/download
+2.  安装nacos https://github.com/alibaba/nacos
+3.  推荐安装Postman https://www.postman.com/downloads/
 
 #### 使用说明
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
+此为SpringBoot 2.2.6项目，运行在IDEA上
 
-#### 参与贡献
-
-1.  Fork 本仓库
-2.  新建 Feat_xxx 分支
-3.  提交代码
-4.  新建 Pull Request
-
-
-#### 码云特技
-
-1.  使用 Readme\_XXX.md 来支持不同的语言，例如 Readme\_en.md, Readme\_zh.md
-2.  码云官方博客 [blog.gitee.com](https://blog.gitee.com)
-3.  你可以 [https://gitee.com/explore](https://gitee.com/explore) 这个地址来了解码云上的优秀开源项目
-4.  [GVP](https://gitee.com/gvp) 全称是码云最有价值开源项目，是码云综合评定出的优秀开源项目
-5.  码云官方提供的使用手册 [https://gitee.com/help](https://gitee.com/help)
-6.  码云封面人物是一档用来展示码云会员风采的栏目 [https://gitee.com/gitee-stars/](https://gitee.com/gitee-stars/)
+1.  redis 6379端口和nacos 8848端口开启服务
+2.  运行jwt-gateway项目 9500端口和jwt-client项目
+3.  运行http://localhost:9500/jwt-client/相关路由

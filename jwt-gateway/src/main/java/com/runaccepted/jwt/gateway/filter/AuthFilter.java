@@ -125,9 +125,10 @@ public class AuthFilter implements GlobalFilter, Ordered {
         // redis中id对应的token不存在
         // 或者请求中的token和redis中活跃的token不匹配，只能选择再登录
         String redisToken = (String)redisTemplate.opsForHash().get(jwtToken,id);
+        //为空说明 被 注销/重新登录 操作删除
         if (StringUtils.isEmpty(redisToken)||!redisToken.equals(token)){
             //50010: Token out;
-            DataBuffer dataBuffer = createResponseBody(50010,username+" 已登出",response);
+            DataBuffer dataBuffer = createResponseBody(50010,username+" 信息不匹配，无法继续操作",response);
             return response.writeWith(Flux.just(dataBuffer));
         }
 

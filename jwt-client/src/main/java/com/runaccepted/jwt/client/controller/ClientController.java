@@ -204,10 +204,12 @@ public class ClientController {
         }
         //当前使用的token进行修改
         redisTemplate.opsForHash().put(jwtToken,id,refreshToken);
-        //更新用户有效时间
+        //更新用户有效时间, 如果被注销，重新写入redis
         String userkey = String.format(jwtUsername,id);
-
-        redisTemplate.expire(userkey,expired,TimeUnit.MILLISECONDS);
+        String username = jwtUtils.getUserNameFromToken(refreshToken);
+        if (expired>0) {
+            redisTemplate.opsForValue().set(userkey,username, expired, TimeUnit.MILLISECONDS);
+        }
 
         Date date = jwtUtils.getHoldTime(refreshToken);
 
