@@ -1,0 +1,19 @@
+server:
+  port: 9500
+
+
+spring:
+  application:
+    name: jwt-gateway
+
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.0.100:8848
+
+    gateway:
+      routes:
+        - id: jwt-route
+          uri: lb://jwt-client
+          predicates:
+            - Path=/jwt-client/**
