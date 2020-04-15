@@ -6,7 +6,7 @@ Jwt+Gateway+Nacos+Redis实现分布式下免登录
 
 #### 整体设计
 
-[Jwt+Gateway+nacos+redis实现免登录](/https://www.runaccepted.com/2019/11/14/Jwt-Spring%E5%AE%9E%E7%8E%B03%E5%A4%A9%E5%85%8D%E7%99%BB%E5%BD%95/)
+[Jwt+Gateway+nacos+redis实现免登录](https://www.runaccepted.com/2019/11/14/Jwt-Spring%E5%AE%9E%E7%8E%B03%E5%A4%A9%E5%85%8D%E7%99%BB%E5%BD%95/)
 
 #### 安装教程
 
